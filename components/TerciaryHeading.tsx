@@ -1,12 +1,13 @@
 import React from 'react'
 
 interface IProps {
-    text: string
+    text: string,
+    color?: string
   }
   
   const TerciaryHeading = (props: IProps) => {
     return (
-      <h3 className='text-xl font-bold uppercase  tracking-tight'>{props.text}</h3>
+      <h3 className={`text-xl font-extrabold uppercase  tracking-tightest ${props.color ? props.color : ''}`}>{props.text}</h3>
     )
   }
 

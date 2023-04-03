@@ -1,11 +1,36 @@
+import Project from '@/components/Project'
 import SecondaryHeading from '@/components/SecondaryHeading'
 import React from 'react'
-
+import { projects, featuredProjects } from '@/utils/projects'
 const Home = () => {
   return (
-    <section className='pt-[130px] '>
-      <SecondaryHeading text={`portfolio`} />
-      <p className='mt-2'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus beatae velit provident accusantium, ab cumque architecto vero facere animi, eos corrupti voluptatum sequi esse nostrum aliquam quasi? Sapiente, corporis quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero nobis, repellat impedit dolore ex doloremque tenetur, accusamus harum sed cupiditate reprehenderit officia eum neque! Id accusamus veniam debitis pariatur dolores!</p></section >
+    <section className='pt-[100px] '>
+      <SecondaryHeading text='featured projects' />
+      <div className='pt-3'>
+      {featuredProjects.map(project => 
+      <Project 
+        key={project.description}  
+        src={project.src}
+        title={project.title}
+        frontend={project.stack.fe}
+        backend={project.stack.be}
+        demo={project.demo}
+        repo={project.repo}
+      />)}
+      </div>
+      <SecondaryHeading text='other projects' />
+      <div className='pt-3 grid grid-cols-2 gap-4'>
+      {projects.map(project => 
+      <Project 
+        key={project.description}  
+        src={project.src}
+        title={project.title}
+        frontend={project.stack.fe}
+        demo={project.demo}
+        repo={project.repo}
+      />)}
+      </div>
+      </section >
   )
 }
 
