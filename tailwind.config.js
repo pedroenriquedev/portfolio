@@ -11,6 +11,8 @@ module.exports = {
         darkGreen: "#2F3A27",
         limeGreen: "#CFF04A",
         dark: "#232323",
+        light: "#EFEFEF",
+        highlight: "#16678B",
       },
     },
     letterSpacing: {
@@ -28,5 +30,5 @@ module.exports = {
   variants: {
     translate: ["active"],
   },
-  safelist: ["text-limeGreen", "bg-light"],
+  safelist: ["text-light", "text-limeGreen", "hover:bg-darkHover"],
 };
