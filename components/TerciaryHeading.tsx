@@ -7,7 +7,7 @@ interface IProps {
   
   const TerciaryHeading = (props: IProps) => {
     return (
-      <h3 className={`text-xl font-extrabold uppercase  tracking-tightest ${props.color ? props.color : ''}`}>{props.text}</h3>
+      <h3 className={`text-xl font-black uppercase  tracking-tightest ${props.color ? props.color : ''}`}>{props.text}</h3>
     )
   }
 

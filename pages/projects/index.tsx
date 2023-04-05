@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <section className='pt-[100px] '>
       <SecondaryHeading text='featured projects' />
-      <div className='pt-3'>
+      <div className='pt-4'>
       {featuredProjects.map(project => 
       <Project 
         key={project.description}  
@@ -19,7 +19,7 @@ const Home = () => {
       />)}
       </div>
       <SecondaryHeading text='other projects' />
-      <div className='pt-3 grid grid-cols-2 gap-4'>
+      <div className='pt-4 grid grid-cols-2 gap-12'>
       {projects.map(project => 
       <Project 
         key={project.description}  

@@ -28,4 +28,5 @@ module.exports = {
   variants: {
     translate: ["active"],
   },
+  safelist: ["text-limeGreen", "bg-light"],
 };

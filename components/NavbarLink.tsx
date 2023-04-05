@@ -10,8 +10,8 @@ interface IProps {
 
 const NavbarLink = (props: IProps) => {
   return (
-    <li className='transform active:translate-y-[4px] transition'>
-    <Link href={props.url || ''} className={` tracking-tight uppercase text-sm font-semibold hover:text-white  ${props.background ? 'bg-lightGreen py-2 px-2 rounded' : '' } `}>
+    <li className='flex items-center'>
+    <Link href={props.url || ''} className={` tracking-tight uppercase text-sm font-semibold hover:text-white transform active:translate-y-[4px] transition  ${props.background ? 'bg-lightGreen py-2 px-2 rounded' : '' } `}>
         {props.text}
     </Link>
     </li>

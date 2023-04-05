@@ -12,12 +12,12 @@ const Hero = () => {
             <h1 className='text-6xl uppercase font-extrabold w-min min-h-[120px] leading-[77px]'>digital craftsman.</h1>
             <p className='max-w-md text-xs my-2'>From front-end design to back-end development, I'm a full stack web developer with a passion for crafting beautiful and functional websites.</p>
             <div className='w-full flex justify-around mt-2 items-center content-center'>
-            <div className='w-full h-[44px]'>
-            <Button text='My projects'/>
-            </div>
-            <div className='w-full h-[44px]'>
-            <Button text='Contact me' />
-            </div>
+            
+            <Button text='My projects' fontColor='dark' url='/projects'/>
+            
+            
+            <Button text='Contact me' isSecondary={true} fontColor='limeGreen' url='/contact' />
+            
             
               
             </div>
