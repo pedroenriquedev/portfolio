@@ -10,7 +10,7 @@ const DevSkills = () => {
   const imageClasses = 'cursor-pointer hover:scale-125 duration-100';
   return (
     <>
-      <div className='flex justify-between'>
+      <div className='flex flex-col xl:flex-row justify-between items-center'>
         <SkillsContainer title={'front end:'}>
 
          {skillsFE.map(skill => (

@@ -1,15 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SecondaryHeading from './SecondaryHeading'
 import NavbarLink from './NavbarLink'
+import { RxCross1, RxHamburgerMenu } from 'react-icons/rx';
+import { useRouter } from 'next/router';
 const Navbar = () => {
+  const [scroll, setScroll] = useState(false);
+  const [showNav, setShowNav] = useState(false);
+  const router = useRouter();
+ useEffect(() => {
+   window.addEventListener("scroll", () => {
+     setScroll(window.scrollY > 60);
+   });
+ }, []);
+
+ useEffect(() => {
+  setShowNav(false)
+ }, [router.asPath])
+
+ 
   return (
-    <div className='w-screen py-4 fixed left-1/2 translate-x-[-50%] z-10 flex justify-center bg-dark shadow-xl'>
-      <div className='w-2/3 flex justify-between items-stretch content-center'>
-        <div>
+    <div className={`w-screen min-h-[70px] py-0 px-4 lg:px-0 md:py-4 fixed left-1/2 translate-x-[-50%] z-50 flex justify-center bg-dark ${scroll ? 'shadow-xl' : ''} 
+    `}>
+       <button onClick={() => {setShowNav((previous) => !previous)}} className='absolute top-4 left-4 text-5xl md:hidden'>
+            {showNav ? <RxCross1 /> : <RxHamburgerMenu />}
+          </button>
+      <div className={`${!showNav && 'hidden'} w-full h-screen md:h-fit lg:w-5/6 xl:w-2/3 md:flex justify-between items-stretch content-center`}>
+        <div className='hidden md:block'>
             <SecondaryHeading text='Pedro Xavier' />
         </div>
-        <ul className='flex justify-between w-1/2'>
-            <NavbarLink url='/' text='home' />
+        <div>
+        </div>
+        <ul className='flex flex-col items-center md:flex-row justify-around md:justify-between w-full h-full md:h-auto md:w-4/6 xl:w-1/2'>
+            <NavbarLink url='/' text='home'/>
             <NavbarLink url='/skills' text='skills' />
             <NavbarLink url='/projects' text='projects' />
             <NavbarLink url='/contact' text='contact' />

@@ -13,6 +13,8 @@ module.exports = {
         dark: "#232323",
         light: "#EFEFEF",
         highlight: "#16678B",
+        limeGreenHover: "#E1F68E",
+        darkHover: "#454545",
       },
     },
     letterSpacing: {
@@ -30,5 +32,16 @@ module.exports = {
   variants: {
     translate: ["active"],
   },
-  safelist: ["text-light", "text-limeGreen", "hover:bg-darkHover"],
+  safelist: [
+    "text-light",
+    "text-limeGreen",
+    "hover:bg-darkHover",
+    "hover:border-darkHover",
+    "hover:bg-limeGreenHover",
+    "hover:border-limeGreenHover",
+    "hover:bg-dark",
+    "hover:bg-limeGreen",
+    "hover:border-dark",
+    "hover:border-limeGreen",
+  ],
 };

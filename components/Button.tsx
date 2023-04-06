@@ -14,10 +14,14 @@ interface IProps {
 }
 
 const Button = (props: IProps) => {
-  const color = props.isDark ? 'bg-dark border-dark ' : 'bg-limeGreen border-limeGreen';
+  const backgroundColor = props.isDark ? 'bg-dark' : 'bg-limeGreen';
+  const borderColor = props.isDark ? 'border-dark' : 'border-limeGreen';
   const background = props.isSecondary ?  'bg-transparent' : '';
+  const hover = !props.isSecondary ? `hover:${backgroundColor}Hover hover:${borderColor}Hover` : `hover:${backgroundColor} hover:${borderColor} ${
+    props.isDark ? 'hover:text-white' : 'hover:text-dark'
+  }`;
   return (
-    <Link rel={props.isExternal ? 'noopener noreferrer' : ''} target={props.isExternal ? '_blank' : ''} href={props.url || ''} className={`${color} text-${props.fontColor} font-bold border-2 tracking-tightest py-3 px-6  hover:opacity-90 rounded ease transition-all ${background} capitalize flex items-center justify-center w-fit min-h-[38px]`}>
+    <Link rel={props.isExternal ? 'noopener noreferrer' : ''} target={props.isExternal ? '_blank' : ''} href={props.url || ''} className={`${backgroundColor + ' ' + borderColor} text-${props.fontColor} font-bold border-2 tracking-tightest py-1 px-2 sm:py-3 sm:px-6 ${hover} rounded ease transition-all ${background} capitalize flex items-center justify-center w-fit min-h-[38px]`}>
         {props.text}
         {props.icon && <IconContext.Provider value={{className: `${(props.text === 'resume/cv') ? 'stroke-1' : 'stroke-0' }`}}><props.icon className='ml-2 stroke-3' /></IconContext.Provider>}
     </Link>

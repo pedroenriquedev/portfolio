@@ -17,12 +17,12 @@ interface IProps {
 const Project = (props: IProps) => {
     
   return (
-    <div className={`${props.backend ? 'bg-limeGreen' : 'bg-light' } w-full text-dark px-8 py-4 rounded tracking-tight mb-12 relative`}>
-        {props.backend && (<span className='px-2 py-3 text-white font-extrabold tracking-tight text-sm rounded bg-blue-500 absolute top-[50%] right-[-50px] rotate-90 translate-y-[-50%]'>FULL STACK</span>)}
-        <div className={props.backend ? 'grid grid-cols-2' : ''}>
-            <div className={props.backend ? '' : 'text-center'}>
+    <div className={`${props.backend ? 'bg-limeGreen' : 'bg-light' } w-11/12 mx-auto min-h-[300px] lg:w-full text-dark px-8 py-4 rounded tracking-tight mb-12 relative`}>
+        {props.backend && (<span className='px-1 py-2 text-xs sm:px-2 sm:py-3 text-white font-extrabold tracking-tight sm:text-sm rounded bg-blue-500 absolute top-0 right-6 xl:top-[50%] xl:right-[-50px] xl:rotate-90 translate-y-[-50%]'>FULL STACK</span>)}
+        <div className={props.backend ? 'grid grid-cols-1 xl:grid-cols-2 xl:gap-1' : ''}>
+            <div className={`${props.backend ? 'mb-4 xl:mb-0' : 'text-center'} flex flex-col h-full items-center`}>
                 <TerciaryHeading color='text-dark' text={props.title} />
-                <Image alt='alt text' src={props.src} width={400} height={225} className={`${props.backend ? '' : 'mx-auto' } rounded my-4 shadow-xl`} />
+                <Image alt='alt text' src={props.src} width={400} height={225} className={`${props.backend ? '' : 'mx-auto' } rounded mt-4 shadow-xl grow-1`} />
             </div>
             
             <div className='ml-4'>
@@ -34,7 +34,7 @@ const Project = (props: IProps) => {
                                 <span className='capitalize font-extrabold tracking-tight'>front end</span>
                                 <p className='text-sm mb-4'>{props.frontend}</p>
                                 <span className='capitalize font-extrabold tracking-tight'>back end</span>
-                                <p className='text-sm'>{props.backend}</p>
+                                <p className='text-sm mb-4 xl:mb-0'>{props.backend}</p>
                             </>
                         )}
                         {!props.backend && (

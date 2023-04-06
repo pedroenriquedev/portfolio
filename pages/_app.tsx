@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
         <Navbar />
-        <main className='w-2/3 m-auto'>
+        <main className='w-full lg:w-2/3 md:m-auto'>
         <Component {...pageProps} />
         </main>
       </> 

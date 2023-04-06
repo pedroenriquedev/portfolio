@@ -10,7 +10,7 @@ interface IProps {
 
 const SkillsContainer = (props: IProps) => {
   return (
-    <div className={`w-2/5 my-12 text-center ${props.addClasses}`}>
+    <div className={`w-4/5 xl:w-2/5 my-12 text-center ${props.addClasses}`}>
       <TerciaryHeading text={props.title || ''} />
        <div className='flex justify-between pt-6'>
         {props.children}

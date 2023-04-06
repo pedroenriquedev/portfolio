@@ -21,7 +21,7 @@ const Home = () => {
       )}
       </div>
       <SecondaryHeading text='other projects' />
-      <div className='pt-8 grid grid-cols-2 gap-12'>
+      <div className='pt-8 grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:gap-12'>
       {projects.map(project => 
       <Project 
         key={project.description}  

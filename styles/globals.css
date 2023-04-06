@@ -5,13 +5,10 @@
 body {
     background-color: #232323;
     color: #e8e8e8;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
     color: #fff;
 }
 
-.customStroke {
-    -webkit-text-stroke: .1px #fff;
-    color: transparent;
-}
