@@ -1,6 +1,7 @@
 import { Url } from 'next/dist/shared/lib/router/router'
 import Link from 'next/link'
 import React from 'react'
+import { IconContext } from 'react-icons/lib'
 
 interface IProps {
   text: string,
@@ -13,12 +14,12 @@ interface IProps {
 }
 
 const Button = (props: IProps) => {
-  const color = props.isDark ? 'bg-dark border-dark' : 'bg-limeGreen border-limeGreen';
+  const color = props.isDark ? 'bg-dark border-dark ' : 'bg-limeGreen border-limeGreen';
   const background = props.isSecondary ?  'bg-transparent' : '';
   return (
-    <Link rel={props.isExternal ? 'noopener noreferrer' : ''} target={props.isExternal ? '_blank' : ''} href={props.url || ''} className={`${color} text-${props.fontColor} font-bold border-2 tracking-tightest py-[5px] px-[10px] hover:translate-y-[-3px] rounded ease transition-all ${background} capitalize flex items-center justify-center w-fit min-h-[38px]`}>
+    <Link rel={props.isExternal ? 'noopener noreferrer' : ''} target={props.isExternal ? '_blank' : ''} href={props.url || ''} className={`${color} text-${props.fontColor} font-bold border-2 tracking-tightest py-3 px-6  hover:opacity-90 rounded ease transition-all ${background} capitalize flex items-center justify-center w-fit min-h-[38px]`}>
         {props.text}
-        {props.icon && <props.icon className='ml-2' />}
+        {props.icon && <IconContext.Provider value={{className: `${(props.text === 'resume/cv') ? 'stroke-1' : 'stroke-0' }`}}><props.icon className='ml-2 stroke-3' /></IconContext.Provider>}
     </Link>
   )
 }

@@ -6,20 +6,22 @@ const Home = () => {
   return (
     <section className='pt-[100px] '>
       <SecondaryHeading text='featured projects' />
-      <div className='pt-4'>
-      {featuredProjects.map(project => 
-      <Project 
-        key={project.description}  
+      <div className='pt-8'>
+      {featuredProjects.map(project =>
+      <div key={project.description} className='[&:not(:last-of-type)]:mb-24'>
+        <Project 
         src={project.src}
         title={project.title}
         frontend={project.stack.fe}
         backend={project.stack.be}
         demo={project.demo}
         repo={project.repo}
-      />)}
+      />
+      </div> 
+      )}
       </div>
       <SecondaryHeading text='other projects' />
-      <div className='pt-4 grid grid-cols-2 gap-12'>
+      <div className='pt-8 grid grid-cols-2 gap-12'>
       {projects.map(project => 
       <Project 
         key={project.description}  

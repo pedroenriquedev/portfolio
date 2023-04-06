@@ -1,5 +1,16 @@
 export const featuredProjects = [
     {
+        src: '/gifs/livestock.gif',
+        title: 'livestock managment app',
+        description: 'herd analytics tool',
+        stack : {
+            fe: ' Next JS, React, ChartJS, Framer Motion and CSS Modules.',
+            be : 'ExpressJS/NodeJS, Mongoose/MongoDB.'
+        },
+        demo: 'https://livestockapp.vercel.app/',
+        repo: 'https://github.com/pedroenriquedev/LiveStock'
+    },
+    {
         src: '/gifs/acaishop.gif',
         title: 'acai shop',
         description: 'This app allows users to easily create their own custom Acai bowls, complete with their favorite fruits, nuts, and toppings.',
@@ -9,17 +20,6 @@ export const featuredProjects = [
         },
         demo: 'https://acaishop.onrender.com/',
         repo: 'https://github.com/pedroenriquedev/Acai-Shop'
-    },
-    {
-        src: '/gifs/livestock.gif',
-        title: 'livestock managment app',
-        description: 'herd analytics tool',
-        stack : {
-            fe: ' Next JS, React ChartJS, Framer Motion, CSS Modules.',
-            be : 'ExpressJS/NodeJS, Mongoose/MongoDB.'
-        },
-        demo: 'https://livestockapp.vercel.app/',
-        repo: 'https://github.com/pedroenriquedev/LiveStock'
     }
 ]
 
