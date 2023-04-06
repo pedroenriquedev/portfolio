@@ -4,12 +4,14 @@ import type { AppProps } from 'next/app'
 import Navbar from '@/components/Navbar';
 import { Inter } from 'next/font/google'
 import Head from 'next/head';
+import { AnimatePresence} from 'framer-motion';
+import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] }) 
 
 export default function App({ Component, pageProps }: AppProps) { 
   const [isSSR, setIsSSR] = useState(true);
-  
+  const router = useRouter();
   useEffect(() => {
     setIsSSR(false);
   }, [])
@@ -33,7 +35,11 @@ export default function App({ Component, pageProps }: AppProps) {
       `}</style>
         <Navbar />
         <main className='w-full lg:w-2/3 md:m-auto'>
-        <Component {...pageProps} />
+        <AnimatePresence mode='wait'>
+          <div key={router.asPath}>
+          <Component {...pageProps} />
+          </div>
+        </AnimatePresence>
         </main>
       </> 
   ) 

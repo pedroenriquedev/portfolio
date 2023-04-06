@@ -14,7 +14,9 @@ const Navbar = () => {
  }, []);
 
  useEffect(() => {
-  setShowNav(false)
+  setTimeout(() => {
+    setShowNav(false)
+  }, 250)
  }, [router.asPath])
 
  

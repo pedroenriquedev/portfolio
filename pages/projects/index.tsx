@@ -2,9 +2,10 @@ import Project from '@/components/Project'
 import SecondaryHeading from '@/components/SecondaryHeading'
 import React from 'react'
 import { projects, featuredProjects } from '@/utils/projects'
+import SectionLayout from '@/components/SectionLayout'
 const Home = () => {
   return (
-    <section className='pt-[100px] '>
+    <SectionLayout  classes='pt-[100px]'>
       <SecondaryHeading text='featured projects' />
       <div className='pt-8'>
       {featuredProjects.map(project =>
@@ -22,7 +23,7 @@ const Home = () => {
       </div>
       <SecondaryHeading text='other projects' />
       <div className='pt-8 grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:gap-12'>
-      {projects.map(project => 
+      {projects.map((project, i) => 
       <Project 
         key={project.description}  
         src={project.src}
@@ -30,9 +31,10 @@ const Home = () => {
         frontend={project.stack.fe}
         demo={project.demo}
         repo={project.repo}
+        index={i}
       />)}
       </div>
-      </section >
+    </SectionLayout>
   )
 }
 

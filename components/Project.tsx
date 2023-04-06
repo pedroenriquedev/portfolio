@@ -3,6 +3,7 @@ import React from 'react'
 import Button from './Button'
 import TerciaryHeading from './TerciaryHeading'
 import { RxExternalLink, RxGithubLogo } from 'react-icons/rx'
+import { motion } from 'framer-motion'
 
 interface IProps {
     src: string,
@@ -12,20 +13,31 @@ interface IProps {
     backend?: string,
     demo: string,
     repo: string
+    index?: number
 }
 
 const Project = (props: IProps) => {
     
   return (
-    <div className={`${props.backend ? 'bg-limeGreen' : 'bg-light' } w-11/12 mx-auto min-h-[300px] lg:w-full text-dark px-8 py-4 rounded tracking-tight mb-12 relative`}>
+    <motion.div 
+    initial={{ 
+        opacity: props.backend ? 1 : 0,
+        y: props.backend ? 0 : 100
+     }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{
+        duration: .4
+    }}
+    viewport={{ once: true }}
+    className={`${props.backend ? 'bg-limeGreen' : 'bg-light' } w-11/12 mx-auto min-h-[300px] lg:w-full text-dark px-8 py-4 rounded tracking-tight mb-12 relative`}>
         {props.backend && (<span className='px-1 py-2 text-xs sm:px-2 sm:py-3 text-white font-extrabold tracking-tight sm:text-sm rounded bg-blue-500 absolute top-0 right-6 xl:top-[50%] xl:right-[-50px] xl:rotate-90 translate-y-[-50%]'>FULL STACK</span>)}
         <div className={props.backend ? 'grid grid-cols-1 xl:grid-cols-2 xl:gap-1' : ''}>
-            <div className={`${props.backend ? 'mb-4 xl:mb-0' : 'text-center'} flex flex-col h-full items-center`}>
+            <div className={`${props.backend ? 'mb-4 xl:mb-0' : 'items-center'} flex flex-col h-full items-center`}>
                 <TerciaryHeading color='text-dark' text={props.title} />
-                <Image alt='alt text' src={props.src} width={400} height={225} className={`${props.backend ? '' : 'mx-auto' } rounded mt-4 shadow-xl grow-1`} />
+                <Image alt='alt text' src={props.src} width={400} height={225} className={`${props.backend ? '' : 'mx-auto mb-4' } rounded mt-4 shadow-xl grow-1`} />
             </div>
             
-            <div className='ml-4'>
+            <div className={`${props.backend ? 'ml-4' : '' }`}>
                 <div className='flex flex-col justify-between h-full'>
                     <div></div>
                     <div>
@@ -55,7 +67,7 @@ const Project = (props: IProps) => {
                     
             </div>
         </div>  
-    </div>
+    </motion.div>
   )
 }
 

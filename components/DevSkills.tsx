@@ -4,13 +4,18 @@ import NextjsSVG from '@/components/NextjsSVG'
 import SkillsContainer from './SkillsContainer'
 import Skill from './Skill'
 import {skillsBE, skillsFE, tools} from '../utils/skills'
+import { motion } from 'framer-motion'
 
 const DevSkills = () => {
   const iconSize = 60;
-  const imageClasses = 'cursor-pointer hover:scale-125 duration-100';
+  const imageClasses = 'hover:scale-125 duration-100';
   return (
     <>
-      <div className='flex flex-col xl:flex-row justify-between items-center'>
+      <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0}}
+      transition={{ duration: 0.8, delay: .25 }}
+      className='flex flex-col xl:flex-row justify-between items-center'>
         <SkillsContainer title={'front end:'}>
 
          {skillsFE.map(skill => (
@@ -48,8 +53,13 @@ const DevSkills = () => {
           
         </SkillsContainer>
 
-      </div>
-        <SkillsContainer title='dev tools:' addClasses='mx-auto'>
+      </motion.div>
+      <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0}}
+      transition={{ duration: 0.8, delay: .5 }}
+      >
+      <SkillsContainer title='dev tools:' addClasses='mx-auto'>
         {tools.map(tool => (
           <Skill key={tool.description}
           iconSize={iconSize} 
@@ -60,6 +70,8 @@ const DevSkills = () => {
           />
          ))} 
         </SkillsContainer>
+      </motion.div>
+        
     </>
   )
 }
