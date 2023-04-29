@@ -33,7 +33,7 @@ const Navbar = () => {
         </div>
         <div>
         </div>
-        <ul className='flex flex-col items-center md:flex-row justify-around md:justify-between w-full h-full md:h-auto md:w-4/6 xl:w-1/2'>
+        <ul className='flex flex-col items-center md:flex-row justify-around md:justify-between w-full h-2/3 md:h-auto md:w-4/6 xl:w-1/2'>
             <NavbarLink url='/' text='home'/>
             <NavbarLink url='/skills' text='skills' />
             <NavbarLink url='/projects' text='projects' /> 
