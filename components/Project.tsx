@@ -34,7 +34,10 @@ const Project = (props: IProps) => {
         <div className={props.backend ? 'grid grid-cols-1 xl:grid-cols-2 xl:gap-1' : ''}>
             <div className={`${props.backend ? 'mb-4 xl:mb-0' : 'items-center'} flex flex-col h-full items-center`}>
                 <TerciaryHeading color='text-dark' text={props.title} />
-                <Image alt='alt text' src={props.src} width={400} height={225} quality={20} className={`${props.backend ? '' : 'mx-auto mb-4' } rounded mt-4 shadow-xl grow-1`} />
+                {props.backend ? 
+                <Image alt='alt text' priority src={props.src} width={400} height={225} quality={20} className={` rounded mt-4 shadow-xl grow-1`} />
+                :
+                <Image alt='alt text' src={props.src} width={400} height={225} quality={20} className={`mx-auto mb-4 rounded mt-4 shadow-xl grow-1`} />}
             </div>
             
             <div className={`${props.backend ? 'ml-4' : '' }`}>
