@@ -32,7 +32,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0}}
             transition={{delay: .5, duration: 0.8 }}
-            className='max-w-xs sm:max-w-md text-xs my-2'>From front-end design to back-end development, I'm a full stack web developer with a enthusiasm for creating websites that are both visually appealing and highly practical.</motion.p>
+            className='max-w-xs sm:max-w-md text-xs my-2'>{`From front-end design to back-end development, I'm a full stack web developer with a enthusiasm for creating websites that are both visually appealing and highly practical.`}</motion.p>
             <motion.div 
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0}}

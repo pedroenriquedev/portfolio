@@ -3,6 +3,7 @@ import SecondaryHeading from './SecondaryHeading'
 import NavbarLink from './NavbarLink'
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx';
 import { useRouter } from 'next/router';
+
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [showNav, setShowNav] = useState(false);
@@ -37,7 +38,7 @@ const Navbar = () => {
             <NavbarLink url='/skills' text='skills' />
             <NavbarLink url='/projects' text='projects' />
             <NavbarLink url='/contact' text='contact' />
-            <NavbarLink text='resume' background={true} />
+            <NavbarLink text='resume' background={true} target='_blank' rel='noopener noreferrer' url='/files/resume_test.pdf' />
         </ul>
       </div>
     </div>
