@@ -36,7 +36,7 @@ const Navbar = () => {
         <ul className='flex flex-col items-center md:flex-row justify-around md:justify-between w-full h-full md:h-auto md:w-4/6 xl:w-1/2'>
             <NavbarLink url='/' text='home'/>
             <NavbarLink url='/skills' text='skills' />
-            <NavbarLink url='/projects' text='projects' />
+            <NavbarLink url='/projects' text='projects' /> 
             <NavbarLink url='/contact' text='contact' />
             <NavbarLink text='resume' background={true} target='_blank' rel='noopener noreferrer' url='/files/resume_test.pdf' />
         </ul>
