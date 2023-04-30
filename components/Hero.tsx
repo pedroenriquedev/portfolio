@@ -4,6 +4,8 @@ import Image from 'next/image'
 import {motion} from 'framer-motion'
 import TypewriterComponent from 'typewriter-effect'
 
+
+
 const Hero = () => {
   return (
     
@@ -16,16 +18,20 @@ const Hero = () => {
       <Image alt='Marcus Aurelius image' src='/marcusaurelius.png' fill sizes='300px' className='object-cover'  priority />
       </motion.div>
     
-        <div className='text-center flex flex-col content-center items-center z-10'>
+        <div className='w-[450px] h-[224px] sm:h-auto text-center flex flex-col content-center items-center z-10'>
             <motion.h1 
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0}}
             transition={{delay: .4, duration: 0.8 }}
-            className='text-5xl sm:text-6xl uppercase font-extrabold w-min sm:min-h-[155px] sm:leading-[77px]'>
+            className='text-5xl sm:text-6xl uppercase font-extrabold w-min min-h-[96px] sm:min-h-[155px] sm:leading-[77px]'>
               <TypewriterComponent options={{
                 strings: ['digital craftsman.', 'problem solver.', 'web developer.'],
                 autoStart: true,
-                loop: true
+                loop: true,
+                delay: 55,
+                deleteSpeed: 25,
+                // @ts-expect-error
+                pauseFor: 600
               }}  />
               </motion.h1>
             <motion.p 
