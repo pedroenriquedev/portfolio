@@ -27,7 +27,7 @@ const Navbar = () => {
        <button onClick={() => {setShowNav((previous) => !previous)}} className='absolute top-4 left-4 text-5xl md:hidden'>
             {showNav ? <RxCross1 /> : <RxHamburgerMenu />}
           </button>
-      <div className={`${!showNav && 'hidden'} w-full h-screen md:h-fit lg:w-5/6 xl:w-2/3 flex justify-between items-stretch content-center`}>
+      <div className={`${!showNav ? 'hidden' : 'flex'} w-full h-screen md:h-fit lg:w-5/6 xl:w-2/3 md:flex justify-between items-stretch content-center`}>
         <div className='hidden md:block'>
             <SecondaryHeading text='Pedro Xavier' />
         </div>
