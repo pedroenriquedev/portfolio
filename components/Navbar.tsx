@@ -27,18 +27,18 @@ const Navbar = () => {
        <button onClick={() => {setShowNav((previous) => !previous)}} className='absolute top-4 left-4 text-5xl md:hidden'>
             {showNav ? <RxCross1 /> : <RxHamburgerMenu />}
           </button>
-      <div className={`${!showNav && 'hidden'} w-full h-screen md:h-fit lg:w-5/6 xl:w-2/3 md:flex justify-between items-stretch content-center`}>
+      <div className={`${!showNav && 'hidden'} w-full h-screen md:h-fit lg:w-5/6 xl:w-2/3 flex justify-between items-stretch content-center`}>
         <div className='hidden md:block'>
             <SecondaryHeading text='Pedro Xavier' />
         </div>
         <div>
         </div>
-        <ul className='flex flex-col items-center md:flex-row justify-around md:justify-between w-full h-2/3 md:h-auto md:w-4/6 xl:w-1/2'>
+        <ul className='flex flex-col items-center md:flex-row justify-around my-auto md:justify-between w-full h-2/3 md:h-auto md:w-4/6 xl:w-1/2'>
             <NavbarLink url='/' text='home'/>
             <NavbarLink url='/skills' text='skills' />
             <NavbarLink url='/projects' text='projects' /> 
             <NavbarLink url='/contact' text='contact' />
-            <NavbarLink text='resume' background={true} target='_blank' rel='noopener noreferrer' url='/files/pedro_resume_may_2023.pdf' />
+            <NavbarLink text='resume' background={true} target='_blank' rel='noopener noreferrer' url='/files/pedroxavier_resume_june_2023.pdf' />
         </ul>
       </div>
     </div>
