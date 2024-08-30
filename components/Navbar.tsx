@@ -38,7 +38,7 @@ const Navbar = () => {
             <NavbarLink url='/skills' text='skills' />
             <NavbarLink url='/projects' text='projects' /> 
             <NavbarLink url='/contact' text='contact' />
-            <NavbarLink text='resume' background={true} target='_blank' rel='noopener noreferrer' url='/files/pedroxavier_resume_june_2023.pdf' />
+            <NavbarLink text='resume' background={true} target='_blank' rel='noopener noreferrer' url='/files/pedroxavier_resume_august_2024.pdf' />
         </ul>
       </div>
     </div>
